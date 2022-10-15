@@ -1,0 +1,181 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My UI</title>
+    
+    <!-- The following line references an external css file -->
+    <!-- It defines style rules for your page, and elements in your page -->
+    <link href="style.css" rel="stylesheet">
+    
+</head>
+<body onload=displayDate();>
+    <!-- <div>
+        Main content can be added here.  
+    </div> -->
+    <div class="row">
+        <div class="center" style="width: 60%;">
+            <span id='date' style="font-size:32px; font-weight: bold; text-decoration: underline;"></span>
+        </div>
+        <span></span>
+        <div class="left-column">
+
+
+            <h2 style="font-size: 40px; text-decoration: underline;">Settings</h2>
+            <div style="font-size: x-large;">
+                <div style="text-decoration: underline;">Pressure</div>
+                <div>
+                    <button id="pressureMinus">-</button>
+                    <box id="currentPressure" >1.0 GPM</box>
+                    <button id="preassurePlus">+</button>
+                </div>
+            </div>
+            <br>
+            <div style="font-size: x-large;">
+                <label for="showerType">Shower Type</label>
+                <select name="showerType" id="showerType">
+                    <option value="Head">Head</option>
+                    <option value="Hand">Hand</option>
+                    <option value="Head & Hand">Head & Hand</option>
+                    <option value="Full Body">Full Body</option>
+                </select>
+            </div>
+            <br>
+            <div style="font-size: x-large;">
+                <label for="nozzleType">Nozzle Type</label>
+                <select name="nozzleType" id="nozzleType">
+                    <option value="Rain">Rain</option>
+                    <option value="Water Saving">Water Saving</option>
+                    <option value="High Pressure">High Pressure</option>
+                    <option value="Waterfall">Waterfall</option>
+                    <option value="Mist">Mist</option>
+                    <option value="Steam">Steam</option>
+                </select>
+            </div>
+            <br>
+            <div style="font-size: x-large;">
+                <div style="text-decoration: underline;">Heater</div>
+                <div>
+                    <input type="radio" id="yesHeat" name="heat" value="yes">
+                    <label for="yesHeat">Yes</label>
+                    <input type="radio" id="noHeat" name="heat" value="no" checked>
+                    <label for="noHeat">No</label>
+                </div>
+            </div>
+            <br>
+            <div style="font-size: x-large;">
+                <button id="tempMinus">-</button>
+                <button id="tempPlus">+</button>
+                <box id="currentTemp" >0 °F</box>
+                <label for="showerType"> increase per </label>
+                <select name="showerType" id="showerType">
+                    <option value="sec">sec</option>
+                    <option value="min">min</option>
+                </select>
+            </div>
+
+
+        </div>
+        <div class="center-column">
+
+
+            <div class="slidecontainer">
+                <input type="range" min="50" max="90" value="70" class="slider" id="myRange">
+                <p style="text-align: center; font-size: 40px; font-weight: bold;">Temp: <span id="temp"></span>° F</p>
+            </div>
+
+            <div>
+                <button style="background-color: rgb(0, 255, 0); font-size: 24px; font-weight: bold;" id="startShower">
+                    <span>Start Shower</span>
+                </button>
+                <button style="background-color: red; font-size: 24px; font-weight: bold; display: none;" id="stopShower">
+                    <span>Stop Shower</span>
+                </button>
+            </div>
+
+
+        </div>
+        <div class="right-column">
+
+            <img class="icons" id="openProfiles" src="images/profiles.svg"></img>
+            <img class="icons" id="openSpotify" src="images/spotify.svg"></img>
+            <img class="icons" id="openWeather" src="images/weather.svg"></img>
+            <img class="icons" id="openTimer" src="images/timer.svg"></img>
+            <img class="icons" id="openUsage" src="images/usage.png"></img>
+
+            <div id="profilesModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close" id="closeProfiles">&times;</span>
+                        <h2 style="text-align: center; text-decoration: underline; font-weight: bold;">Profiles</h2>
+                    </div>
+                    <div class="modal-body">
+                        Profiles Feature Not Implemented At This Time
+                    </div>
+                </div>
+            </div>
+            <div id="spotifyModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close" id="closeSpotify">&times;</span>
+                        <h2 style="text-align: center; text-decoration: underline; font-weight: bold;">Spotify</h2>
+                    </div>
+                    <div class="modal-body">
+                        <img src="images/loading.gif"></img>
+                    </div>
+                </div>
+            </div>
+            <div id="weatherModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close" id="closeWeather">&times;</span>
+                        <h2 style="text-align: center; text-decoration: underline; font-weight: bold;">Weather Channel</h2>
+                    </div>
+                    <div class="modal-body">
+                        <img src="images/loading.gif"></img>
+                    </div>
+                </div>
+            </div>
+            <div id="timerModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close" id="closeTimer">&times;</span>
+                        <h2 style="text-align: center; text-decoration: underline; font-weight: bold;">Timer</h2>
+                    </div>
+                    <div class="modal-body">
+                        Timer Feature Not Implemented At This Time
+                    </div>
+                </div>
+            </div>
+            <div id="usageModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close" id="closeUsage">&times;</span>
+                        <h2 style="text-align: center; text-decoration: underline; font-weight: bold;">Usage</h2>
+                    </div>
+                    <div class="modal-body">
+                        Usate Feature Not Implemented At This Time
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div>
+        <h1>Smart Shower Interface</h1>
+        <h2>Nishanth Chidambaram</h2>
+        <a href="https://sites.google.com/d/119bRTLtl0hpnFIrxSj2NxI_BZ49qpXRt/p/1HWWF_0GGJ-w6VyGChh66Hh8cEvPbuys4/edit" target="_blank">Link To Site</a>
+        <br>
+        <p>
+            In the real world, the UI would be on a screen inside the shower, and can be placed on any wall except the wall the door is on. 
+            The screen should be waterproof and touchscreen, and there should be a wireless remote to also control the menu. 
+            The remote should have a suction to anchor it to the wall in any position inside the shower.
+        </p>
+        <img src="images/placement.png">
+        </img>
+    </div>
+    <!-- Load external JS files -->
+    <!-- This is where you will do most of the 'work' for your applications -->
+    <script src="main.js"></script>
+</body>
+</html>

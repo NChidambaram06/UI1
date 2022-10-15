@@ -1,0 +1,166 @@
+.box {
+  float: left;
+  height: 20px;
+  width: 20px;
+  margin-bottom: 15px;
+  border: 1px solid black;
+  clear: both;
+}
+
+.row {
+  border: 1px solid black;
+}
+
+.center {
+  align-items: center;
+  margin: auto;
+}
+ /* Columns */
+.left-column {
+  float: left;
+  width: 20vw;
+  padding: 9px;
+  border: 15px solid rgb(0, 30, 128);
+  height: 100%;
+  text-align: center;
+}
+
+.right-column {
+  float: left;
+  width: 20vw;
+  padding: 9px;
+  border: 15px solid rgb(128, 0, 0);
+  height: 100%;
+  align-content: center;
+}
+
+.center-column {
+  float: left;
+  width: 50vw;
+  padding: 10px;
+  height: 100%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+/* Slider */
+.slidecontainer {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 50px;
+  border-radius: 5px;
+  background-image: linear-gradient(to right, blue , red);
+  outline: none;
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 50px;
+  border-radius: 50%;
+  background: black;
+  opacity: .75;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 50px;
+  border-radius: 50%;
+  background: black;
+  opacity: .75;
+  cursor: pointer;
+}
+
+ /* Icons */
+.icons {
+  height: 100px;
+  display: block;
+  margin: auto;
+  padding-top: 20px;
+}
+
+/* Modal */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: black;
+  color: white;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {right:-300px; opacity:0} 
+  to {right:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {right:-300px; opacity:0}
+  to {right:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: black;
+  color: white;
+  margin: auto;
+}
+
+.modal-body {
+  padding: 2px 16px;
+  margin: auto;
+  align-items: center;
+}
+
